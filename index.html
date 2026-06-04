@@ -366,22 +366,17 @@
       }
 
       .works-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: clamp(10px, 2vw, 14px);
-      }
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(10px, 2vw, 14px);
+  grid-auto-rows: auto; /* altura automática */
+}
 
-      .work-card {
-        aspect-ratio: 3/3.5;
-        background: var(--gray-card);
-        border-radius: 10px;
-        overflow: hidden;
-        transition:
-          transform 0.25s ease,
-          box-shadow 0.25s ease;
-        cursor: pointer;
-      }
-
+/* Faz o último item ocupar as 2 colunas se estiver sozinho */
+.work-card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  max-width: calc(50% - 7px); /* mantém o mesmo tamanho visual */
+}
       .work-card:hover {
         transform: translateY(-4px);
         box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
@@ -1784,15 +1779,22 @@ const closeLightbox = document.getElementById('closeLightbox');
 { src: "3.png", alt: "nba3", client: null, group: "nba" },
 { src: "4.png", alt: "nba4", client: null, group: "nba" },
   { src: "Feijão.jpg",        alt: "Bar do Feijão",        client: "Bar do Feijão",        tipo: "Flyer",          ig: "bardofeijaorn" },
-  { src: "30k.png",        alt: "30k",        client: "Triadmarkets",        tipo: "Flyer",          ig: "triadmarkets" },
+  { src: "30k.png",        alt: "30k",        client: "Triadmarkets",        tipo: "Arte comemorativa",          ig: "triadmarkets" },
   { src: "tomatto.mp4",       alt: "pizzamp4",             client: "Pizzaria Tomatto",     tipo: "Motion para TVs", ig: "tomattooficial" },
   { src: "splitanimage-1.png", alt: "kings",  client: null, group: "kings", groupMain: true },
 { src: "splitanimage-2.png", alt: "kings2", client: null, group: "kings" },
 { src: "splitanimage-3.png", alt: "kings3", client: null, group: "kings" },
 { src: "Refri.mp4",         alt: "refri",                client: "Pizzaria Tomatto",     tipo: "Motion para TVs", ig: "tomattooficial" },
-{ src: "whitelabel.jpg",        alt: "Whitelabel",        client: "Triadmarkets",        tipo: "Flyer",          ig: "triadmarkets" },
-  { src: "Salgado.jpg",       alt: "Cento de Salgado",     client: "Cento de Salgado",     tipo: "Flyer",          ig: "centoodesalgados" },
-  { src: "bolos.jpg",         alt: "Bolo",                 client: null },
+{ src: "gbgrifes.png",         alt: "gb",                client: "GB Grifes",     tipo: "Arte para destaques", ig: "gbgrifes__" },
+  { src: "Salgado.jpg",       alt: "Cento de Salgado",     client: "Cento de Salgado",     tipo: "Flyer",          ig: "genario_massas_e_salgados" },
+  { src: "lovetoo.png",       alt: "Loveeto",     client: "Loveeto",     tipo: "Logomarca",          ig: "loveetomoda" },
+  { src: "bolos.jpg",         alt: "Bolo",                 client: "Frankeline",        tipo: "ADS Flyer",          ig: "frankelinetortasedoces" },
+  { src: "whitelabel.jpg",        alt: "Whitelabel",        client: "Triadmarkets",        tipo: "Arte comercial",          ig: "triadmarkets" },
+  { src: "caroli.mp4",         alt: "refri",                client: "Pizzaria Tomatto",     tipo: "Motion para TVs", ig: "tomattooficial" },
+  { src: "trd.mp4",        alt: "trd",        client: "Triadmarkets",        tipo: "Motion Design",          ig: "triadmarkets" },
+  { src: "bannerana40.jpeg",        alt: "ana",        client: "Ana Maria",        tipo: "Arte para banner de aniversário" },
+  { src: "fast.png",        alt: "fast",        client: "Triadmarkets",        tipo: "Arte para ADS",          ig: "triadmarkets" },
+  { src: "davi.png",        alt: "davi",        client: "Fight Music Show",        tipo: "Arte para luta entre Davi Brito e Sacha Bali" },
 ];
 
 workImages.forEach((w) => {
@@ -1891,7 +1893,7 @@ if (itemAtual.client) {
   credito.style.cssText = 'display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:8px; padding:10px 12px; background:rgba(255,255,255,0.15); border-radius:10px;';
   const texto = document.createElement('p');
   texto.style.cssText = 'margin:0; font-size:13px; color:#ccc;';
-  texto.innerHTML = `Trabalho feito para <strong style="color:#fff;">${itemAtual.client}</strong> · ${itemAtual.tipo || 'Flyer'} · 2025`;
+  texto.innerHTML = `Trabalho feito para <strong style="color:#fff;">${itemAtual.client}</strong> · ${itemAtual.tipo || 'Flyer'} · 2026`;
   const link = document.createElement('a');
   link.href = `https://www.instagram.com/${itemAtual.ig}`;
   link.target = '_blank';
@@ -1927,7 +1929,7 @@ lightboxContent.appendChild(wrapper);
         credito.style.cssText = 'display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:8px; padding:10px 12px; background:rgba(255,255,255,0.15); border-radius:10px;';
         const texto = document.createElement('p');
         texto.style.cssText = 'margin:0; font-size:13px; color:#ccc;';
-        texto.innerHTML = `Trabalho feito para <strong style="color:#fff;">${w.client}</strong> · ${w.tipo || 'Flyer'} · 2025`;
+        texto.innerHTML = `Trabalho feito para <strong style="color:#fff;">${w.client}</strong> · ${w.tipo || 'Flyer'} · 2026`;
         const link = document.createElement('a');
         link.href = `https://www.instagram.com/${w.ig}`;
         link.target = '_blank';
