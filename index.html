@@ -1779,13 +1779,18 @@ const lightboxContent = document.getElementById('lightboxContent');
 const closeLightbox = document.getElementById('closeLightbox');
 
       const workImages = [
+{ src: "1.png", alt: "nba",  client: null, group: "nba", groupMain: true },
+{ src: "2.png", alt: "nba2", client: null, group: "nba" },
+{ src: "3.png", alt: "nba3", client: null, group: "nba" },
+{ src: "4.png", alt: "nba4", client: null, group: "nba" },
   { src: "Feijão.jpg",        alt: "Bar do Feijão",        client: "Bar do Feijão",        tipo: "Flyer",          ig: "bardofeijaorn" },
-  { src: "tomatto.mp4",       alt: "pizzamp4",             client: "Pizzaria Tomatto",     tipo: "Flyer para TVs", ig: "pizzariatomatto" },
+  { src: "30k.png",        alt: "30k",        client: "Triadmarkets",        tipo: "Flyer",          ig: "triadmarkets" },
+  { src: "tomatto.mp4",       alt: "pizzamp4",             client: "Pizzaria Tomatto",     tipo: "Motion para TVs", ig: "tomattooficial" },
   { src: "splitanimage-1.png", alt: "kings",  client: null, group: "kings", groupMain: true },
 { src: "splitanimage-2.png", alt: "kings2", client: null, group: "kings" },
 { src: "splitanimage-3.png", alt: "kings3", client: null, group: "kings" },
+{ src: "Refri.mp4",         alt: "refri",                client: "Pizzaria Tomatto",     tipo: "Motion para TVs", ig: "tomattooficial" },
 { src: "whitelabel.jpg",        alt: "Whitelabel",        client: "Triadmarkets",        tipo: "Flyer",          ig: "triadmarkets" },
-{ src: "Refri.mp4",         alt: "refri",                client: "Pizzaria Tomatto",     tipo: "Flyer para TVs", ig: "pizzariatomatto" },
   { src: "salgado.gif",       alt: "Cento de Salgado",     client: "Cento de Salgado",     tipo: "Flyer",          ig: "centoodesalgados" },
   { src: "bolos.jpg",         alt: "Bolo",                 client: null },
 ];
@@ -1886,7 +1891,7 @@ if (itemAtual.client) {
   credito.style.cssText = 'display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:8px; padding:10px 12px; background:rgba(255,255,255,0.15); border-radius:10px;';
   const texto = document.createElement('p');
   texto.style.cssText = 'margin:0; font-size:13px; color:#ccc;';
-  texto.innerHTML = `Flyer feito para <strong style="color:#fff;">${itemAtual.client}</strong> · ${itemAtual.tipo || 'Flyer'} · 2025`;
+  texto.innerHTML = `Trabalho feito para <strong style="color:#fff;">${itemAtual.client}</strong> · ${itemAtual.tipo || 'Flyer'} · 2025`;
   const link = document.createElement('a');
   link.href = `https://www.instagram.com/${itemAtual.ig}`;
   link.target = '_blank';
@@ -1922,7 +1927,7 @@ lightboxContent.appendChild(wrapper);
         credito.style.cssText = 'display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:8px; padding:10px 12px; background:rgba(255,255,255,0.15); border-radius:10px;';
         const texto = document.createElement('p');
         texto.style.cssText = 'margin:0; font-size:13px; color:#ccc;';
-        texto.innerHTML = `Flyer feito para <strong style="color:#fff;">${w.client}</strong> · ${w.tipo || 'Flyer'} · 2025`;
+        texto.innerHTML = `Trabalho feito para <strong style="color:#fff;">${w.client}</strong> · ${w.tipo || 'Flyer'} · 2025`;
         const link = document.createElement('a');
         link.href = `https://www.instagram.com/${w.ig}`;
         link.target = '_blank';
